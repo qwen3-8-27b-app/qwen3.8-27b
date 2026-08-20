@@ -98,9 +98,9 @@ This installer's positioning: the community's best local coder generation, match
 
 ## Repository
 
-- **Source:** https://github.com/qwen3-8-27b/qwen3-8-27b
-- **Releases:** https://github.com/qwen3-8-27b/qwen3-8-27b/releases
-- **Issues:** https://github.com/qwen3-8-27b/qwen3-8-27b/issues
+- **Source:** https://github.com/qwen3-8-27b-app/qwen3.8-27b
+- **Releases:** https://github.com/qwen3-8-27b-app/qwen3.8-27b/releases
+- **Issues:** https://github.com/qwen3-8-27b-app/qwen3.8-27b/issues
 - **License:** MIT
 
 ## Common Questions
