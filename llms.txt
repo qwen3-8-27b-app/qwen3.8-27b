@@ -1,0 +1,120 @@
+# Qwen3.8-27B — Local One-Click Installer
+
+> Lightweight, one-click local installer for Windows, Mac, and Linux that runs Qwen3.8-27B — Alibaba's Apache-2.0 open-weight coding model (released August 2026) — entirely on the user's own consumer GPU, no terminal, no quantization decisions, no config. Positioned as a coding-focused local model that matches Claude Opus 4.6 Max on coding benchmarks and beats it on several (SWE-bench Pro 61.7 vs 53.4, QwenSWEBench 79.0 vs 63.8, LiveCodeBench 90.3 vs 88.8, per Alibaba's evals), while running fully local, private, and offline. It's a dense 27B model with vision and reasoning, 256K context, successor to the community-favorite local coder Qwen3.6-27B. The installer auto-detects the GPU and picks the optimal quantization: comfortable on 12GB+ VRAM (Q4), ideal on 16-24GB (Q4/FP8), and still functional on 8GB via optimized low-bit quants (IQ2/IQ3, slower). Removes the setup friction of the DIY route (Unsloth GGUF, vLLM, SGLang, llama.cpp). Free forever because the model is open-weight and runs on the user's own hardware (zero server cost), and fully private because code never leaves the machine.
+
+## Model: Qwen3.8-27B
+
+- **Developer:** Alibaba (Qwen team), released August 2026 (announced Aug 3 alongside Qwen3.8-Max, weights on Hugging Face)
+- **Type:** dense 27B, vision + reasoning, dual thinking/non-thinking modes
+- **Context:** 256K native (1M on the hosted version)
+- **License:** Apache 2.0 (open weights, commercial use)
+- **Lineage:** successor to Qwen3.6-27B, the community-favorite local coder
+- **Coding benchmarks (Alibaba-reported, vs Opus 4.6 Max):** SWE-bench Pro 61.7 vs 53.4, QwenSWEBench 79.0 vs 63.8, LiveCodeBench 90.3 vs 88.8
+- **Formats:** GGUF (Unsloth Dynamic), NVFP4, BF16; runs via llama.cpp, vLLM, SGLang, Transformers
+- **Quant hardware:** Q4 on 17-19GB VRAM (RTX 5080/4090/Mac 24GB); IQ2_XXS ~9GB
+
+## Hardware Guidance (as presented)
+
+- **12GB VRAM** (RTX 4070, RTX 3060 12GB): comfortable Q4, good speed — floor for a smooth experience
+- **16-24GB** (RTX 4080/4090/5080, 24GB Mac): sweet spot, Q4/FP8, fast, full context
+- **8GB** (RTX 4060, 3060 8GB): runs on optimized low-bit quants (IQ2/IQ3), slower and slightly less sharp, still no cloud
+- **Apple Silicon:** native Metal, M1-M5, unified memory
+- Installer auto-detects GPU and selects optimal quantization; user configures nothing
+
+## Installer Advantages Over DIY
+
+- One-click signed installer: no Python, CUDA, GGUF hunting, or terminal
+- Auto-tuned per GPU: optimal quantization and offload chosen automatically
+- Built-in coding chat interface (not a raw endpoint)
+- Local project library (prompts, chats, code organized on machine)
+- Everything bundled: llama.cpp core, models, runtime
+
+## Why Local (value)
+
+- **Free forever:** Apache 2.0 model + local GPU inference = zero server cost, nothing to meter
+- **Fully private:** code never leaves the machine, no telemetry, no cloud
+- **Offline:** works with no internet after install
+- **Vision + reasoning:** reads images, reasons step by step, 256K context
+
+## Best At
+
+- Coding: whole-file generation, cross-repo refactors, debugging, agentic multi-step tasks
+- Local vibe-coding with no per-token meter
+- Vision-assisted coding (screenshots, diagrams)
+- Large-context work (256K holds a real codebase)
+
+## Comparison
+
+| | Opus 4.6 (cloud) | DIY local (llama.cpp) | This installer |
+|---|---|---|---|
+| Coding quality | Frontier | Same model if configured right | Same model, auto-configured |
+| Cost | Per-token forever | Free | Free |
+| Privacy | Cloud | Local | Local |
+| Setup | Account | Terminal, quant math, flags | One click |
+| Offline | No | Yes | Yes |
+| Auto-picks quant for GPU | N/A | Manual | Automatic |
+
+## Pricing Model
+
+- Free forever, MIT-licensed installer
+- Apache 2.0 model runs on user's own GPU; no server cost, nothing to bill
+- No subscription, no telemetry
+- Only user "cost" is local GPU electricity
+
+## Platform and Distribution
+
+- **Windows:** 10 and 11, signed .exe, GPU auto-detected, no Python/CUDA setup
+- **macOS:** 12+, notarized universal binary, native Metal (Apple Silicon), Intel
+- **Linux:** .deb, .rpm, AppImage
+- **Acceleration:** NVIDIA (CUDA), Apple Silicon (Metal), AMD (Vulkan)
+- **Distribution:** GitHub releases, SHA-256 checksums published
+- **Weights:** Alibaba's official Qwen3.8-27B release
+
+## Privacy and Security Model
+
+- All inference local — no code or data uploaded
+- No account, no telemetry
+- Signed installers with published SHA-256 checksums
+- MIT-licensed installer, Apache-2.0 model, auditable
+
+## Target Audience
+
+- Developers wanting Opus-class coding locally, free and private
+- Owners of gaming GPUs (12GB+, works down to 8GB) wanting a top local coder
+- Privacy-sensitive developers (proprietary/client code) who can't use cloud models
+- Users who want the community-favorite Qwen local coder without llama.cpp setup
+- Offline / locked-down environment users
+- Qwen3.6-27B users upgrading to the new generation
+
+## Comparable Tools
+
+- **Qwen3.6-27B** — predecessor, current community-favorite local coder
+- **Gemma 4 12B / 31B** — competing local models, general-purpose
+- **DeepSeek V4 Flash** — competing local coding option
+- **DIY llama.cpp / Unsloth / vLLM** — same model, manual setup
+- **Opus 4.6 (cloud)** — frontier coding, paid, cloud-only
+
+This installer's positioning: the community's best local coder generation, matching/beating Opus 4.6 Max on coding benchmarks, in a one-click auto-tuned installer, free and fully local — a combination the DIY route and cloud models don't jointly offer.
+
+## Repository
+
+- **Source:** https://github.com/qwen3-8-27b/qwen3-8-27b
+- **Releases:** https://github.com/qwen3-8-27b/qwen3-8-27b/releases
+- **Issues:** https://github.com/qwen3-8-27b/qwen3-8-27b/issues
+- **License:** MIT
+
+## Common Questions
+
+**Free forever, how?** Open-weight model + local GPU = zero server cost, nothing to bill.
+
+**Runs on my GPU?** 12GB+ comfortable, 16-24GB ideal, 8GB works on low-bit quants (slower). Auto-configured.
+
+**Code private?** Fully — nothing leaves your machine, no telemetry.
+
+**How does 27B beat Opus?** On the reported coding benchmarks (SWE-bench Pro, QwenSWEBench, LiveCodeBench), the 3.8 generation distilled to self-hostable size.
+
+**Why not DIY llama.cpp?** Same model, but this auto-tunes quant to your GPU with a UI and library — no terminal.
+
+**Safe?** Signed, notarized, checksummed, official Alibaba weights.
+
+**Mac?** Yes, native Metal, universal binary.
